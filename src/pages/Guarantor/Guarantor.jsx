@@ -19,9 +19,9 @@ import SectionHeader from "../../layout/SectionHeader";
 
 const GuarantorPage = () => {
   const membersList = [
-    { id: 1, name: "Amit Sharma" },
-    { id: 2, name: "Ravi Kumar" },
-    { id: 3, name: "Neha Singh" },
+    { id: 1, name: "Amit Sharma", membershipNo: "M001" },
+    { id: 2, name: "Ravi Kumar", membershipNo: "M002" },
+    { id: 3, name: "Neha Singh", membershipNo: "M003" },
   ];
 
   const [selectedMember, setSelectedMember] = useState("");
@@ -32,6 +32,7 @@ const GuarantorPage = () => {
   const formik = useFormik({
     initialValues: {
       nameOfMember: "",
+      membershipNumber: "",
       guarantorName: "",
       guarantorMobileNo: "",
     },
@@ -48,8 +49,11 @@ const GuarantorPage = () => {
 
   const handleMemberSelect = (event) => {
     const memberName = event.target.value;
+    const selected = membersList.find((m) => m.name === memberName);
+
     setSelectedMember(memberName);
     formik.setFieldValue("nameOfMember", memberName);
+    formik.setFieldValue("membershipNumber", selected?.membershipNo || "");
   };
 
   //  Add Guarantor
@@ -103,7 +107,7 @@ const GuarantorPage = () => {
           <form onSubmit={formik.handleSubmit}>
             <Grid container spacing={3} sx={{ py: 3 }}>
               {/* Name of Member (auto-filled) */}
-              <Grid item xs={6} sm={6} md={3}>
+              <Grid size={{xs:6, sm:6, md:3}}>
                 <StyledTextField
                   label="Name of Member"
                   name="nameOfMember"
@@ -111,12 +115,22 @@ const GuarantorPage = () => {
                   InputProps={{ readOnly: true }}
                 />
               </Grid>
+
+              {/* Membership Number (auto-filled) */}
+              <Grid size={{xs:6, sm:6, md:3}}>
+                <StyledTextField
+                  label="Membership No."
+                  name="membershipNumber"
+                  value={formik.values.membershipNumber}
+                  InputProps={{ readOnly: true }}
+                />
+              </Grid>
             </Grid>
 
-            {/*  Dynamic Guarantor Fields */}
+            {/* Dynamic Guarantor Fields */}
             {guarantors.map((g, index) => (
               <Grid container spacing={3} sx={{ py: 1 }} key={index}>
-                <Grid item xs={6} sm={6} md={3}>
+                <Grid size={{xs:6, sm:6, md:3}}>
                   <StyledTextField
                     label="Guarantor Name"
                     name={`guarantorName-${index}`}
@@ -127,7 +141,7 @@ const GuarantorPage = () => {
                   />
                 </Grid>
 
-                <Grid item xs={6} sm={6} md={3}>
+                <Grid size={{xs:6, sm:6, md:3}}>
                   <StyledTextField
                     label="Guarantor Mobile No"
                     name={`guarantorMobileNo-${index}`}
@@ -185,3 +199,4 @@ const GuarantorPage = () => {
 };
 
 export default GuarantorPage;
+

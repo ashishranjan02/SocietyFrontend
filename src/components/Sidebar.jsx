@@ -12,7 +12,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import SettingsIcon from "@mui/icons-material/Settings";
-import FamilyRestroom from "@mui/icons-material";
+import FamilyIcon from "@mui/icons-material/FamilyRestroom";
 import { Link } from "react-router-dom";
 import { People } from "@mui/icons-material";
 
@@ -25,8 +25,8 @@ const Sidebar = () => {
         { label: "Settings", route: "/settings", icon: <SettingsIcon /> },
         { label: "Greeting", route: "/greeting", icon: <EventSeatIcon /> },
         { label: "Guarantor", route:"/guarantor", icon: <People />},
-        { label: "Family", route:"/familyDetails", icon: <FamilyRestroom />},
-        { label: "Witnes", route:"/witness", icon:<People /> },
+        { label: "Family", route:"/familyDetails", icon: <FamilyIcon />},
+        { label: "Witness", route:"/witness", icon:<People /> },
     ];
 
     return (
