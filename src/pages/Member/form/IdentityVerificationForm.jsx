@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { Badge as BadgeIcon, CloudUpload as UploadIcon } from "@mui/icons-material";
 import { useFormik } from "formik";
-import StyledTextField from "../../ui/StyledTextField";
-import SectionHeader from "../../layout/SectionHeader";
+import StyledTextField from "../../../ui/StyledTextField";
+import SectionHeader from "../../../layout/SectionHeader";
 
 const IdentityVerificationForm = () => {
   const formik = useFormik({

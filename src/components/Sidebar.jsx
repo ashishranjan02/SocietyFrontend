@@ -3,17 +3,16 @@ import {
     Box,
     List,
     ListItem,
-    ListItemButton,
     ListItemIcon,
     ListItemText,
     Typography,
     Divider,
 } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import SettingsIcon from "@mui/icons-material/Settings";
+import FamilyRestroom from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { People } from "@mui/icons-material";
 
@@ -25,6 +24,9 @@ const Sidebar = () => {
         { label: "Amenities Booking", route: "/amenities", icon: <EventSeatIcon /> },
         { label: "Settings", route: "/settings", icon: <SettingsIcon /> },
         { label: "Greeting", route: "/greeting", icon: <EventSeatIcon /> },
+        { label: "Guarantor", route:"/guarantor", icon: <People />},
+        { label: "Family", route:"/familyDetails", icon: <FamilyRestroom />},
+        { label: "Witnes", route:"/witness", icon:<People /> },
     ];
 
     return (

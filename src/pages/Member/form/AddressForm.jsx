@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 import { Home as HomeIcon, UploadFile as UploadFileIcon } from "@mui/icons-material";
 import { useFormik } from "formik";
-import StyledTextField from "../../ui/StyledTextField";
-import SectionHeader from "../../layout/SectionHeader";
+import StyledTextField from "../../../ui/StyledTextField";
+import SectionHeader from "../../../layout/SectionHeader";
 
 const AddressForm = () => {
   const formik = useFormik({
@@ -70,7 +70,7 @@ const AddressForm = () => {
     }
   };
 
-  // ✅ Handle file upload
+  // Handle file upload
   const handleFileUpload = (prefix, file) => {
     formik.setFieldValue(`${prefix}.proofDocument`, file);
   };
@@ -146,7 +146,7 @@ const AddressForm = () => {
         />
       </Grid>
 
-      {/* ✅ File Upload */}
+      {/* File Upload */}
       <Grid item xs={12}>
         <Button
           variant="outlined"

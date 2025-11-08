@@ -13,8 +13,8 @@ import {
   Delete as DeleteIcon,
 } from "@mui/icons-material";
 import { useFormik, FieldArray, FormikProvider } from "formik";
-import StyledTextField from "../../ui/StyledTextField";
-import SectionHeader from "../../layout/SectionHeader";
+import StyledTextField from "../../../ui/StyledTextField";
+import SectionHeader from "../../../layout/SectionHeader";
 
 const BankGuaranteeForm = () => {
   const formik = useFormik({

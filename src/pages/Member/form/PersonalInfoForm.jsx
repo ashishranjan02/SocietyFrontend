@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import { Person as PersonIcon } from "@mui/icons-material";
 import { useFormik } from "formik";
-import StyledTextField from "../../ui/StyledTextField";
-import SectionHeader from "../../layout/SectionHeader";
+import StyledTextField from "../../../ui/StyledTextField";
+import SectionHeader from "../../../layout/SectionHeader";
 
 const PersonalInfoForm = () => {
   const formik = useFormik({
@@ -236,7 +236,7 @@ const PersonalInfoForm = () => {
                 <StyledTextField
                     label="Alternet Phone Number"
                     name="alternetPhoneNo"
-                    value={formik.values.alternetPhoneNo}
+                    value={formik.values.alternatePhoneNo}
                     onChange={formik.handleChange}
                 />
             </Grid>

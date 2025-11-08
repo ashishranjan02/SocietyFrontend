@@ -31,7 +31,7 @@ const MissingMembersTable = () => {
         { memberNo: "M005", name: "Rahul Verma", aadhaarNumber: "", panNumber: "", address: "Bangalore", phone: "6666666666" },
     ];
 
-    // ✅ PDF Generator Function
+    //  PDF Generator Function
     const generateSimplePDF = (filteredMembers, selectedFields) => {
         try {
             const doc = new jsPDF();
